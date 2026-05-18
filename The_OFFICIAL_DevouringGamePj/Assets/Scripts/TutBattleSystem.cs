@@ -31,11 +31,12 @@ public class TutBattleSystem : MonoBehaviour
 
     public bool SetActive;
     public bool isPlayerTurn = true;
+    public bool isEnemyTurn = false;
 
     public Button AttackButton;
     public Button CookButton;
     public Button HealButton;
-    public float cooldownTime = 5.0f;
+    public float cooldownTime = 1.0f;
 
     public Transform respawnPoint;
     public AudioSource backgroundMusic;
@@ -74,9 +75,13 @@ public class TutBattleSystem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
+        isEnemyTurn = true;
+        isPlayerTurn = false;
+
+        StartCoroutine(ButtonCooldownRoutine());
+
         bool isDead = goblinUnit.TakeDamage(playerUnit.damage);
         Debug.Log("Takedamage");
-
 
         goblinHealth.SetHP(goblinUnit.currentHP);
         dialogueManager.dialogueText.text = "The attack is successful! " + goblinUnit.unitName + " takes " + playerUnit.damage + " damage!";
@@ -98,11 +103,17 @@ public class TutBattleSystem : MonoBehaviour
         {
             state = BattleState.ENEMYTURN;
             goblinHealth.SetHP(goblinUnit.currentHP);
+            
+
 
             yield return new WaitForSeconds(2f);
             StartCoroutine(EnemyTurn());
+           
 
         }
+       
+       
+
 
     }
 
@@ -147,15 +158,22 @@ public class TutBattleSystem : MonoBehaviour
 
     private IEnumerator ButtonCooldownRoutine()
     {
-        AttackButton.interactable = false; // Disable button
-        CookButton.interactable = false;
-        HealButton.interactable = false;
+        if (!isPlayerTurn)
+        {
+            AttackButton.interactable = false; // Disable button
+            AttackButton.gameObject.SetActive(false); // Hide button
+           
+        }
+       
 
         yield return new WaitForSeconds(cooldownTime);
 
-        AttackButton.interactable = true; // Re-enable button
-        CookButton.interactable = true;
-        HealButton.interactable = true;
+        if (isPlayerTurn)
+        {
+            AttackButton.interactable = true; // Re-enable button
+            AttackButton.gameObject.SetActive(true); // Show button
+            
+        } 
     }
 
 
@@ -196,8 +214,12 @@ public class TutBattleSystem : MonoBehaviour
         else
         {
             state = BattleState.PLAYERTURN;
+            
             PlayerTurn();
+            
         }
+
+        
     }
 
     public IEnumerator Shake(float duration, float magnitude)
@@ -248,6 +270,9 @@ public class TutBattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
+        isEnemyTurn = false;
+        isPlayerTurn = true;
+        StartCoroutine(ButtonCooldownRoutine());
         dialogueManager.dialogueText.text = "Choose an action, " + playerUnit.unitName;
     }
 
