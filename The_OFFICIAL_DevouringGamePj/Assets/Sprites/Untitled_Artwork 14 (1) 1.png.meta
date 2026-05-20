@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: e3909ee6c17d8d74e9dcd1c4729c4e79
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8748713288972693106
+    second: Untitled_Artwork 14 (1) 1_0
+  - first:
+      213: 6171902676813540492
+    second: Untitled_Artwork 14 (1) 1_1
+  - first:
+      213: 4545844126957674910
+    second: Untitled_Artwork 14 (1) 1_2
+  - first:
+      213: -1861040529253949086
+    second: Untitled_Artwork 14 (1) 1_3
+  - first:
+      213: -7547726740990927399
+    second: Untitled_Artwork 14 (1) 1_4
+  - first:
+      213: -7671187806024842160
+    second: Untitled_Artwork 14 (1) 1_5
+  - first:
+      213: 4675090857823741918
+    second: Untitled_Artwork 14 (1) 1_6
+  - first:
+      213: -4355099752416028559
+    second: Untitled_Artwork 14 (1) 1_7
+  - first:
+      213: 3448086165955428844
+    second: Untitled_Artwork 14 (1) 1_8
+  - first:
+      213: 274764332280870563
+    second: Untitled_Artwork 14 (1) 1_9
+  - first:
+      213: -3461398067272024293
+    second: Untitled_Artwork 14 (1) 1_10
+  - first:
+      213: -6732881058633540599
+    second: Untitled_Artwork 14 (1) 1_11
+  - first:
+      213: -6769074208600235400
+    second: Untitled_Artwork 14 (1) 1_12
+  - first:
+      213: -7959086664457239025
+    second: Untitled_Artwork 14 (1) 1_13
+  - first:
+      213: -1386534343287583645
+    second: Untitled_Artwork 14 (1) 1_14
+  - first:
+      213: -5701853267286732628
+    second: Untitled_Artwork 14 (1) 1_15
+  - first:
+      213: -5950008881028359245
+    second: Untitled_Artwork 14 (1) 1_16
+  - first:
+      213: -1496509496477446233
+    second: Untitled_Artwork 14 (1) 1_17
+  - first:
+      213: -3828999768171528574
+    second: Untitled_Artwork 14 (1) 1_18
+  - first:
+      213: -2481348593218458644
+    second: Untitled_Artwork 14 (1) 1_19
+  - first:
+      213: 2796269485305778370
+    second: Untitled_Artwork 14 (1) 1_20
+  - first:
+      213: 7022604501072658228
+    second: Untitled_Artwork 14 (1) 1_21
+  - first:
+      213: 3759069822389829903
+    second: Untitled_Artwork 14 (1) 1_22
+  - first:
+      213: -2117276010102763576
+    second: Untitled_Artwork 14 (1) 1_23
+  - first:
+      213: -8118544263576497980
+    second: Untitled_Artwork 14 (1) 1_24
+  - first:
+      213: -5339901777461796817
+    second: Untitled_Artwork 14 (1) 1_25
+  - first:
+      213: -5351993934761061613
+    second: Untitled_Artwork 14 (1) 1_26
+  - first:
+      213: -2560365506346938369
+    second: Untitled_Artwork 14 (1) 1_27
+  - first:
+      213: -1613457420802078927
+    second: Untitled_Artwork 14 (1) 1_28
+  - first:
+      213: 5400688796360669095
+    second: Untitled_Artwork 14 (1) 1_29
+  - first:
+      213: 9162920638790247609
+    second: Untitled_Artwork 14 (1) 1_30
+  - first:
+      213: 3844094733422483300
+    second: Untitled_Artwork 14 (1) 1_31
+  - first:
+      213: -8756046047988819586
+    second: Untitled_Artwork 14 (1) 1_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Untitled_Artwork 14 (1) 1_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1536
+        width: 256
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ce0cfc8c007a550800000000000000
+      internalID: 6171902676813540492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9232d9caf2422e44eae47d10c98d26e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Untitled_Artwork 14 (1) 1_0: -8748713288972693106
+      Untitled_Artwork 14 (1) 1_1: 6171902676813540492
+      Untitled_Artwork 14 (1) 1_10: -3461398067272024293
+      Untitled_Artwork 14 (1) 1_11: -6732881058633540599
+      Untitled_Artwork 14 (1) 1_12: -6769074208600235400
+      Untitled_Artwork 14 (1) 1_13: -7959086664457239025
+      Untitled_Artwork 14 (1) 1_14: -1386534343287583645
+      Untitled_Artwork 14 (1) 1_15: -5701853267286732628
+      Untitled_Artwork 14 (1) 1_16: -5950008881028359245
+      Untitled_Artwork 14 (1) 1_17: -1496509496477446233
+      Untitled_Artwork 14 (1) 1_18: -3828999768171528574
+      Untitled_Artwork 14 (1) 1_19: -2481348593218458644
+      Untitled_Artwork 14 (1) 1_2: 4545844126957674910
+      Untitled_Artwork 14 (1) 1_20: 2796269485305778370
+      Untitled_Artwork 14 (1) 1_21: 7022604501072658228
+      Untitled_Artwork 14 (1) 1_22: 3759069822389829903
+      Untitled_Artwork 14 (1) 1_23: -2117276010102763576
+      Untitled_Artwork 14 (1) 1_24: -8118544263576497980
+      Untitled_Artwork 14 (1) 1_25: -5339901777461796817
+      Untitled_Artwork 14 (1) 1_26: -5351993934761061613
+      Untitled_Artwork 14 (1) 1_27: -2560365506346938369
+      Untitled_Artwork 14 (1) 1_28: -1613457420802078927
+      Untitled_Artwork 14 (1) 1_3: -1861040529253949086
+      Untitled_Artwork 14 (1) 1_4: -7547726740990927399
+      Untitled_Artwork 14 (1) 1_5: -7671187806024842160
+      Untitled_Artwork 14 (1) 1_6: 4675090857823741918
+      Untitled_Artwork 14 (1) 1_7: -4355099752416028559
+      Untitled_Artwork 14 (1) 1_8: 3448086165955428844
+      Untitled_Artwork 14 (1) 1_9: 274764332280870563
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
