@@ -86,7 +86,7 @@ public class TutBattleSystem : MonoBehaviour
         goblinHealth.SetHP(goblinUnit.currentHP);
         dialogueManager.dialogueText.text = "The attack is successful! " + goblinUnit.unitName + " takes " + playerUnit.damage + " damage!";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         if (isDead)
         {
@@ -94,7 +94,7 @@ public class TutBattleSystem : MonoBehaviour
 
             goblinHealth.SetHP(goblinUnit.currentHP = 0);
             goblinUnit.GetComponent<SpriteRenderer>().enabled = false;
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(1.5f);
 
             SceneManager.LoadScene("WinScreen");
             EndBattle();
@@ -103,10 +103,8 @@ public class TutBattleSystem : MonoBehaviour
         {
             state = BattleState.ENEMYTURN;
             goblinHealth.SetHP(goblinUnit.currentHP);
-            
 
-
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f);
             StartCoroutine(EnemyTurn());
            
 
@@ -119,6 +117,12 @@ public class TutBattleSystem : MonoBehaviour
 
     IEnumerator PlayerCook()
     {
+
+        isEnemyTurn = true;
+        isPlayerTurn = false;
+
+        StartCoroutine(ButtonCooldownRoutine());
+
         bool isDead = goblinUnit.CookDamage(playerUnit.cook);
         Debug.Log("CookDamage");
 
@@ -144,7 +148,7 @@ public class TutBattleSystem : MonoBehaviour
             state = BattleState.ENEMYTURN;
             goblinHealth.SetHP(goblinUnit.currentHP);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
             StartCoroutine(EnemyTurn());
 
         }
@@ -160,9 +164,14 @@ public class TutBattleSystem : MonoBehaviour
     {
         if (!isPlayerTurn)
         {
+            yield return new WaitForSeconds(1.5f); // Wait for 2 seconds before disabling the button
             AttackButton.interactable = false; // Disable button
             AttackButton.gameObject.SetActive(false); // Hide button
-           
+            CookButton.interactable = false;
+            CookButton.gameObject.SetActive(false);
+            HealButton.interactable = false;
+            HealButton.gameObject.SetActive(false);
+
         }
        
 
@@ -172,13 +181,23 @@ public class TutBattleSystem : MonoBehaviour
         {
             AttackButton.interactable = true; // Re-enable button
             AttackButton.gameObject.SetActive(true); // Show button
-            
+            CookButton.interactable = true;
+            CookButton.gameObject.SetActive(true);
+            HealButton.interactable = true;
+            HealButton.gameObject.SetActive(true);
         } 
     }
 
 
     IEnumerator PlayerHeal()
     {
+
+
+        isEnemyTurn = true;
+        isPlayerTurn = false;
+
+        StartCoroutine(ButtonCooldownRoutine());
+
         playerUnit.Heal(5);
 
         playerHealth.SetHP(playerUnit.currentHP);
@@ -194,13 +213,13 @@ public class TutBattleSystem : MonoBehaviour
     {
         dialogueManager.dialogueText.text = goblinUnit.unitName + " attacks!";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
         bool isDead = playerUnit.TakeDamage(goblinUnit.damage);
         playerHealth.SetHP(playerUnit.currentHP);
         dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + playerUnit.damage + " damage!";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
 
         if (isDead)
         {
