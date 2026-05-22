@@ -5,9 +5,10 @@ using System.Collections.Generic;
 public class MapNode : MonoBehaviour //holds Node info and handles visuals
 {
     //Node type
-    public enum NodeType { Start, ItemGet, BattleEncounter }
+    public enum NodeType { Empty, DamageItemGet, HealItemGet, BattleEncounter }
     public NodeType nodeType;
     public string popupText;
+    public ItemData itemToGive;
     public string sceneToLoad = "";
     //Node general
     public List<MapNode> connectedNodes = new List<MapNode>();

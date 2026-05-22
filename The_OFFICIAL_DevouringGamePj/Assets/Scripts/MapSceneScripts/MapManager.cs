@@ -98,12 +98,20 @@ public class MapManager : MonoBehaviour
 
     void TriggerEncounter(MapNode node)
     {
-        if (node.nodeType == MapNode.NodeType.Start) // does nothing 
+        if (node.nodeType == MapNode.NodeType.Empty) // does nothing 
         {
             UnlockConnectedNodes(node);
         }
-        else if (node.nodeType == MapNode.NodeType.ItemGet) // shows popup
+        else if (node.nodeType == MapNode.NodeType.DamageItemGet || node.nodeType == MapNode.NodeType.HealItemGet) // shows popup
         {
+           if (node.itemToGive != null)
+            {
+                bool added = InventoryManager.Instance.AddItem(node.itemToGive);
+                if (!added)
+                {
+                    Debug.Log("Inventory Full! Could not add " + node.itemToGive.itemName);
+                }
+            }
             PopupManager.Instance.ShowPopup(node.popupText);
         }
         else if (node.nodeType == MapNode.NodeType.BattleEncounter) // scene transition 
