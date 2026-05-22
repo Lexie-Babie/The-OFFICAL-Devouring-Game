@@ -57,6 +57,8 @@ public class FinalBossBattleSystem : MonoBehaviour
     public int randomHeal = 10;
     public float randomHealChance = 0.2f; // 20% chance to heal
 
+    public bool randomBurstAttack = true;
+
     public BattleState2 state;
 
     //Start is called before the first frame update
@@ -86,7 +88,6 @@ public class FinalBossBattleSystem : MonoBehaviour
 
         state = BattleState2.PLAYERTURN;
         PlayerTurn();
-
     }
 
     IEnumerator PlayerAttack()
@@ -126,7 +127,6 @@ public class FinalBossBattleSystem : MonoBehaviour
 
     IEnumerator PlayerCook()
     {
-
         isEnemyTurn = true;
         isPlayerTurn = false;
 
@@ -215,11 +215,32 @@ public class FinalBossBattleSystem : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
+    public IEnumerator RandomBurstAttack(Transform playerUnit)
+    {
+        // 1. Determine a random number of hits for this "burst"
+        int hitCount = Random.Range(2, 5); // 2 to 4 hits
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            // 2. Perform the individual hit logic
+            Debug.Log($"Hit {i + 1} of {hitCount}!");
+
+            // Apply damage or trigger an animation here
+            playerUnit.GetComponent<Unit>().TakeDamage(5);
+
+            // 3. Wait for a short duration between hits
+            yield return new WaitForSeconds(0.2f);
+
+        } 
+    }
+
     IEnumerator EnemyTurn()
     {
         isShaking = true;
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
-     
+        
+        yield return StartCoroutine(RandomBurstAttack(playerUnit.transform));
+
 
         yield return new WaitForSeconds(2f);
 
