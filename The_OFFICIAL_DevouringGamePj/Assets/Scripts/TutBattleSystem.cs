@@ -106,13 +106,8 @@ public class TutBattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(1.5f);
             StartCoroutine(EnemyTurn());
-           
-
         }
        
-       
-
-
     }
 
     IEnumerator PlayerCook()
@@ -154,7 +149,6 @@ public class TutBattleSystem : MonoBehaviour
         }
     }
 
-
     public void StartButtonCooldown()
     {
         StartCoroutine(ButtonCooldownRoutine());
@@ -171,7 +165,6 @@ public class TutBattleSystem : MonoBehaviour
             CookButton.gameObject.SetActive(false);
             HealButton.interactable = false;
             HealButton.gameObject.SetActive(false);
-
         }
        
 
@@ -191,8 +184,6 @@ public class TutBattleSystem : MonoBehaviour
 
     IEnumerator PlayerHeal()
     {
-
-
         isEnemyTurn = true;
         isPlayerTurn = false;
 
@@ -213,13 +204,13 @@ public class TutBattleSystem : MonoBehaviour
     {
         dialogueManager.dialogueText.text = goblinUnit.unitName + " attacks!";
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         bool isDead = playerUnit.TakeDamage(goblinUnit.damage);
         playerHealth.SetHP(playerUnit.currentHP);
         dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + playerUnit.damage + " damage!";
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
@@ -227,7 +218,6 @@ public class TutBattleSystem : MonoBehaviour
             playerUnit.GetComponent<SpriteRenderer>().enabled = false;
             yield return new WaitForSeconds(3.0f);
 
-            ; SceneManager.LoadScene("LoseScreen");
             EndBattle();
         }
         else

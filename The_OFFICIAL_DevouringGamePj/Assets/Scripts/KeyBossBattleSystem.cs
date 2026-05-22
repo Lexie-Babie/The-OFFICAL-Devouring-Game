@@ -39,13 +39,23 @@ public class FinalBossBattleSystem : MonoBehaviour
     public float cooldownTime = 1.0f;
 
     public Transform respawnPoint;
+
     public AudioSource backgroundMusic;
+
+    public AudioSource audioSource;
+    public AudioClip attackSound;
+    public AudioClip hitSound;
 
     public bool isShaking = false;
     public float shakeDuration = 2.5f;
     public float shakeMagnitude = 1.1f;
     public float dampingSpeed = 1.0f;
     public Camera maincamera;
+
+    public int enemymaxHealth = 100;
+    public int enemycurrentHealth;
+    public int randomHeal = 10;
+    public float randomHealChance = 0.2f; // 20% chance to heal
 
     public BattleState2 state;
 
@@ -92,7 +102,7 @@ public class FinalBossBattleSystem : MonoBehaviour
         bossHealth.SetHP(bossUnit.currentHP);
         dialogueManager.dialogueText.text = "The attack is successful! " + bossUnit.unitName + " takes " + playerUnit.damage + " damage!";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
@@ -100,7 +110,7 @@ public class FinalBossBattleSystem : MonoBehaviour
 
             bossHealth.SetHP(bossUnit.currentHP = 0);
             bossUnit.GetComponent<SpriteRenderer>().enabled = false;
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
 
             SceneManager.LoadScene("WinScreen");
             EndBattle();
@@ -109,11 +119,8 @@ public class FinalBossBattleSystem : MonoBehaviour
         {
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
-
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             StartCoroutine(EnemyTurn());
-
-
         }
     }
 
@@ -150,8 +157,9 @@ public class FinalBossBattleSystem : MonoBehaviour
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             StartCoroutine(EnemyTurn());
+            
 
         }
     }
@@ -165,14 +173,13 @@ public class FinalBossBattleSystem : MonoBehaviour
     {
         if (!isPlayerTurn)
         {
-            yield return new WaitForSeconds(1.5f); // Wait for 2 seconds before disabling the button
+            yield return new WaitForSeconds(1.5f); // Wait for 1.5 seconds before disabling the button
             AttackButton.interactable = false; // Disable button
             AttackButton.gameObject.SetActive(false); // Hide button
             CookButton.interactable = false;
             CookButton.gameObject.SetActive(false);
             HealButton.interactable = false;
             HealButton.gameObject.SetActive(false);
-
         }
 
 
@@ -200,7 +207,7 @@ public class FinalBossBattleSystem : MonoBehaviour
         playerUnit.Heal(5);
 
         playerHealth.SetHP(playerUnit.currentHP);
-        dialogueManager.dialogueText.text = "You feel renewed strength";
+        dialogueManager.dialogueText.text = "+ 5 = You feel renewed strength";
 
         yield return new WaitForSeconds(2f);
 
@@ -214,13 +221,13 @@ public class FinalBossBattleSystem : MonoBehaviour
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
      
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         bool isDead = playerUnit.TakeDamage(bossUnit.damage);
         playerHealth.SetHP(playerUnit.currentHP);
         dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + playerUnit.damage + " damage!";
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
@@ -237,7 +244,6 @@ public class FinalBossBattleSystem : MonoBehaviour
             isShaking = false;
 
             PlayerTurn();
-
         }
     }
 
