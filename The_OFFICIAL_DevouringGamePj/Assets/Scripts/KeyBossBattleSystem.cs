@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public enum BattleState2 { START, PLAYERTURN, ENEMYTURN, WON, LOST } //defining the different states that the game can be inusing UnityEngine;
 
 public class FinalBossBattleSystem : MonoBehaviour
@@ -56,6 +57,12 @@ public class FinalBossBattleSystem : MonoBehaviour
     public int enemycurrentHealth;
     public int randomHeal = 10;
     public float randomHealChance = 0.2f; // 20% chance to heal
+
+    public BurstAttackController burstAttackController;
+    public int attackA = 10;
+    public int attackB = 15;
+    public int attackC = 20;
+    public int attackD = 0;
 
     public bool randomBurstAttack = true;
 
@@ -168,6 +175,25 @@ public class FinalBossBattleSystem : MonoBehaviour
         }
     }
 
+    IEnumerator PlayerHeal()
+    {
+        isEnemyTurn = true;
+        isPlayerTurn = false;
+
+        StartCoroutine(ButtonCooldownRoutine());
+
+        playerUnit.Heal(5);
+
+        playerHealth.SetHP(playerUnit.currentHP);
+        dialogueManager.dialogueText.text = "+ 5 = You feel renewed strength";
+
+        yield return new WaitForSeconds(2f);
+
+        state = BattleState2.ENEMYTURN;
+        StartCoroutine(EnemyTurn());
+    }
+
+
     public void StartButtonCooldown()
     {
         StartCoroutine(ButtonCooldownRoutine());
@@ -224,42 +250,10 @@ public class FinalBossBattleSystem : MonoBehaviour
         flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
     }
 
-
-    IEnumerator PlayerHeal()
+    public void TriggerRandomBurst()
     {
-        isEnemyTurn = true;
-        isPlayerTurn = false;
-
-        StartCoroutine(ButtonCooldownRoutine());
-
-        playerUnit.Heal(5);
-
-        playerHealth.SetHP(playerUnit.currentHP);
-        dialogueManager.dialogueText.text = "+ 5 = You feel renewed strength";
-
-        yield return new WaitForSeconds(2f);
-
-        state = BattleState2.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
-    }
-
-    public IEnumerator RandomBurstAttack(Transform playerUnit)
-    {
-        // 1. Determine a random number of hits for this "burst"
-        int hitCount = Random.Range(2, 5); // 2 to 4 hits
-
-        for (int i = 0; i < hitCount; i++)
-        {
-            // 2. Perform the individual hit logic
-            Debug.Log($"Hit {i + 1} of {hitCount}!");
-
-            // Apply damage or trigger an animation here
-            playerUnit.GetComponent<Unit>().TakeDamage(5);
-
-            // 3. Wait for a short duration between hits
-            yield return new WaitForSeconds(0.2f);
-
-        } 
+        StartCoroutine(burstAttackController.PerformBurstRoutine());
+        bossUnit.GetComponent<BurstAttackController>().TriggerRandomBurst();
     }
 
     IEnumerator EnemyTurn()
@@ -267,16 +261,17 @@ public class FinalBossBattleSystem : MonoBehaviour
         isShaking = true;
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
         
-        yield return StartCoroutine(RandomBurstAttack(playerUnit.transform));
-
-
         yield return new WaitForSeconds(2f);
-
         TriggerFlash();
         bool isDead = playerUnit.TakeDamage(bossUnit.damage);
+    
+
         playerHealth.SetHP(playerUnit.currentHP);
         TriggerFlash();
         dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + playerUnit.damage + " damage!";
+
+        // bossUnit.GetComponent<BurstAttackController>().TriggerRandomBurst();
+
 
         yield return new WaitForSeconds(2f);
 
@@ -327,6 +322,8 @@ public class FinalBossBattleSystem : MonoBehaviour
         {
             dialogueManager.dialogueText.text = "You have defeated the " + bossUnit.unitName + "!";
 
+            SceneManager.LoadScene("WinScreen");
+
             if (backgroundMusic.isPlaying)
             {
                 backgroundMusic.Stop();
@@ -336,19 +333,9 @@ public class FinalBossBattleSystem : MonoBehaviour
         {
             dialogueManager.dialogueText.text = "You were defeated...";
 
-            GetComponent<SpriteRenderer>().enabled = false;
-        }
-    }
-
-    void Update()
-    {
-        if (state == BattleState2.WON)
-        {
-            SceneManager.LoadScene("WinScreen");
-        }
-        else if (state == BattleState2.LOST)
-        {
             SceneManager.LoadScene("LoseScreen");
+
+            GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
@@ -365,7 +352,6 @@ public class FinalBossBattleSystem : MonoBehaviour
         if (state != BattleState2.PLAYERTURN)
             return;
         StartCoroutine(PlayerAttack());
-
     }
 
     public void OnHealButton()
@@ -373,7 +359,6 @@ public class FinalBossBattleSystem : MonoBehaviour
         if (state != BattleState2.PLAYERTURN)
             return;
         StartCoroutine(PlayerHeal());
-
     }
 
     public void OnCookButton()
@@ -381,7 +366,6 @@ public class FinalBossBattleSystem : MonoBehaviour
         if (state != BattleState2.PLAYERTURN)
             return;
         StartCoroutine(PlayerCook());
-
     }
 }
 

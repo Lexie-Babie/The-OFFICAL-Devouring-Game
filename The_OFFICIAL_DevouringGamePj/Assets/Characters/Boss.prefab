@@ -109,5 +109,12 @@ MonoBehaviour:
   damage: 15
   heal: 0
   cook: 0
-  maxHP: 150
-  currentHP: 150
+  maxHP: 0
+  currentHP: 0
+  timeBetweenAttacks: 0.2
+  minBurstCount: 1
+  maxBurstCount: 3
+  attackA: 10
+  attackB: 15
+  attackC: 20
+  attackD: 0

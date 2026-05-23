@@ -3382,6 +3382,11 @@ MonoBehaviour:
   enemycurrentHealth: 0
   randomHeal: 10
   randomHealChance: 0.2
+  burstAttackController: {fileID: 0}
+  attackA: 10
+  attackB: 15
+  attackC: 20
+  attackD: 0
   randomBurstAttack: 1
   flashImage: {fileID: 1610740973}
   flashDuration: 0.3
@@ -3880,6 +3885,10 @@ PrefabInstance:
     - target: {fileID: 864889162667304665, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
       propertyPath: maxHP
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 864889162667304665, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 864889162667304665, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
       propertyPath: unitName

@@ -41,6 +41,10 @@ public class TutBattleSystem : MonoBehaviour
     public Transform respawnPoint;
     public AudioSource backgroundMusic;
 
+    public Image flashImage;
+    public float flashDuration = 0.2f;
+    public Color flashColor = new Color(1, 0, 0, 0.5f); // Red with 50% transparency
+
     public BattleState state;
 
     //Start is called before the first frame update
@@ -181,6 +185,29 @@ public class TutBattleSystem : MonoBehaviour
         } 
     }
 
+    public void TriggerFlash()
+    {
+        StartCoroutine(FlashCoroutine());
+    }
+
+    private IEnumerator FlashCoroutine()
+    {
+        // Set to flash color
+        flashImage.color = flashColor;
+
+        // Fade out
+        float elapsed = 0f;
+        while (elapsed < flashDuration)
+        {
+            elapsed += Time.deltaTime;
+            float lerpAlpha = Mathf.Lerp(flashColor.a, 0, elapsed / flashDuration);
+            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, lerpAlpha);
+            yield return null;
+        }
+
+        // Ensure it's fully transparent at the end
+        flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
+    }
 
     IEnumerator PlayerHeal()
     {
