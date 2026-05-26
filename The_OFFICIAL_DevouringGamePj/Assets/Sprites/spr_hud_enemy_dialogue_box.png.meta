@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 9d95d73cbf58e1c4ab7f0b63afa543e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8952995313188971231
+    second: spr_hud_enemy_dialogue_box_0
+  - first:
+      213: 6060901519415642708
+    second: spr_hud_enemy_dialogue_box_1
+  - first:
+      213: -4978640143658162876
+    second: spr_hud_enemy_dialogue_box_2
+  - first:
+      213: -3910844526418025036
+    second: spr_hud_enemy_dialogue_box_3
+  - first:
+      213: -6674961099994616587
+    second: spr_hud_enemy_dialogue_box_4
+  - first:
+      213: 4198765332388943982
+    second: spr_hud_enemy_dialogue_box_5
+  - first:
+      213: -3506095423620977276
+    second: spr_hud_enemy_dialogue_box_6
+  - first:
+      213: 1454467469236959456
+    second: spr_hud_enemy_dialogue_box_7
+  - first:
+      213: 6277814804418364145
+    second: spr_hud_enemy_dialogue_box_8
+  - first:
+      213: -698099600583207344
+    second: spr_hud_enemy_dialogue_box_9
+  - first:
+      213: 1488608270307189852
+    second: spr_hud_enemy_dialogue_box_10
+  - first:
+      213: -6830070865661063021
+    second: spr_hud_enemy_dialogue_box_11
+  - first:
+      213: 233643724276126497
+    second: spr_hud_enemy_dialogue_box_12
+  - first:
+      213: 8295832848946198660
+    second: spr_hud_enemy_dialogue_box_13
+  - first:
+      213: -1779938076650129893
+    second: spr_hud_enemy_dialogue_box_14
+  - first:
+      213: 336503280862401679
+    second: spr_hud_enemy_dialogue_box_15
+  - first:
+      213: -1559551680005483550
+    second: spr_hud_enemy_dialogue_box_16
+  - first:
+      213: 3216310069075469596
+    second: spr_hud_enemy_dialogue_box_17
+  - first:
+      213: 6242960676117140325
+    second: spr_hud_enemy_dialogue_box_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_0
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 477
+        width: 808
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d52a9923290c380800000000000000
+      internalID: -8952995313188971231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_1
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 751
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a0563e1d5ac1450800000000000000
+      internalID: 6060901519415642708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_2
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 741
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44561c4da2158eab0800000000000000
+      internalID: -4978640143658162876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 734
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5a21faf93e9b9c0800000000000000
+      internalID: -3910844526418025036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 732
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc2549be36cd53a0800000000000000
+      internalID: -6674961099994616587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_5
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 729
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e689444e2d2054a30800000000000000
+      internalID: 4198765332388943982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_6
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 733
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48de27ec9c8d75fc0800000000000000
+      internalID: -3506095423620977276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_7
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 723
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8fa39057e4f2410800000000000000
+      internalID: 1454467469236959456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_8
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 728
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f28b07ad474f1750800000000000000
+      internalID: 6277814804418364145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_9
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 724
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0565569ac1adf46f0800000000000000
+      internalID: -698099600583207344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_10
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 724
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c546e59b55998a410800000000000000
+      internalID: 1488608270307189852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_11
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 733
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39017852cb6b631a0800000000000000
+      internalID: -6830070865661063021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_12
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 564
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1235a75bab11e3300800000000000000
+      internalID: 233643724276126497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_13
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 471
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488747dd508b02370800000000000000
+      internalID: 8295832848946198660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_14
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 469
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16b313ffb36c47e0800000000000000
+      internalID: -1779938076650129893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_15
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 473
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f849e8973ff7ba400800000000000000
+      internalID: 336503280862401679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_16
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 473
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3d868820c5b5ae0800000000000000
+      internalID: -1559551680005483550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_17
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 476
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1561c297f0a2ac20800000000000000
+      internalID: 3216310069075469596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_hud_enemy_dialogue_box_18
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 474
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563d1b688a373a650800000000000000
+      internalID: 6242960676117140325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 21a5e617a0b04424e90cb70d1b9425f3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spr_hud_enemy_dialogue_box_0: -8952995313188971231
+      spr_hud_enemy_dialogue_box_1: 6060901519415642708
+      spr_hud_enemy_dialogue_box_10: 1488608270307189852
+      spr_hud_enemy_dialogue_box_11: -6830070865661063021
+      spr_hud_enemy_dialogue_box_12: 233643724276126497
+      spr_hud_enemy_dialogue_box_13: 8295832848946198660
+      spr_hud_enemy_dialogue_box_14: -1779938076650129893
+      spr_hud_enemy_dialogue_box_15: 336503280862401679
+      spr_hud_enemy_dialogue_box_16: -1559551680005483550
+      spr_hud_enemy_dialogue_box_17: 3216310069075469596
+      spr_hud_enemy_dialogue_box_18: 6242960676117140325
+      spr_hud_enemy_dialogue_box_2: -4978640143658162876
+      spr_hud_enemy_dialogue_box_3: -3910844526418025036
+      spr_hud_enemy_dialogue_box_4: -6674961099994616587
+      spr_hud_enemy_dialogue_box_5: 4198765332388943982
+      spr_hud_enemy_dialogue_box_6: -3506095423620977276
+      spr_hud_enemy_dialogue_box_7: 1454467469236959456
+      spr_hud_enemy_dialogue_box_8: 6277814804418364145
+      spr_hud_enemy_dialogue_box_9: -698099600583207344
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
