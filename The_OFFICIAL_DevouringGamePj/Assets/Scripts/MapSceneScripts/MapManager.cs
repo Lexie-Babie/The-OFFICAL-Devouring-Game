@@ -15,20 +15,25 @@ public class MapManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("MapManager Awake() is running");
         Instance = this; //sets the instance variable to the current instance of MapManager when the script is loaded
     }
 
     void Start() 
     {
+        Debug.Log("MapManager Start() is running");
         // restores position on map when coming back form another scene
         string savedNodeName = PlayerPrefs.GetString("CurrentNode", ""); //retrieves the name of the last visited node from PlayerPrefs, defaulting to the startNode if no saved data is found, "" is the default
+        Debug.Log("Looking for saved node: " + savedNodeName);
         if (savedNodeName != "")
         {
             foreach (MapNode node in FindObjectsByType<MapNode>(FindObjectsSortMode.None)) //looks through all MapNode objects in the scene to find the one that matches the saved node name
             {
+                Debug.Log("checking node: " + node.gameObject.name);
                 if (node.gameObject.name == savedNodeName)
                 {
                     currentNode = node; //sets the currentNode to the found node
+                    Debug.Log("found saved node: " + node.gameObject.name);
                     break; // just stops the loop once the node is found, since we don't need to keep looking
                 }
                 
@@ -37,6 +42,7 @@ public class MapManager : MonoBehaviour
         // if nothing is saved, go to start node
         if (currentNode == null)
         {
+            Debug.Log("No saved node found, defaulting to StartNode");
             currentNode = startNode;
         }
         // move player piece to the current node's position
@@ -47,6 +53,14 @@ public class MapManager : MonoBehaviour
 
     void Update()
     {
+        if(Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            //FOR TESTING REASONS, REMOVE FOR ACTUAL GAME, THIS CLEARS ALL SAVED DATA INCLUDING INVENTORY AND PROGRESS
+            PlayerPrefs.DeleteAll();
+            Debug.Log("saved data all cleared");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); //reloads the current scene to reflect the cleared data
+        }
+        
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Vector3 mousePosition = Mouse.current.position.ReadValue();
@@ -90,7 +104,7 @@ public class MapManager : MonoBehaviour
         currentNode.isVisited = true;
         isMoving = false;
         //saves Postion
-        PlayerPrefs.SetString("currentNode", currentNode.gameObject.name);
+        PlayerPrefs.SetString("CurrentNode", currentNode.gameObject.name);
         PlayerPrefs.Save();
         //triggers node encounter 
         TriggerEncounter(currentNode);
