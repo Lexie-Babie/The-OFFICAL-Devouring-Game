@@ -132,7 +132,7 @@ public class FinalBossBattleSystem : MonoBehaviour
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
             yield return new WaitForSeconds(2f);
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(PerformBurstRoutine());
         }
     }
 
@@ -169,7 +169,7 @@ public class FinalBossBattleSystem : MonoBehaviour
             bossHealth.SetHP(bossUnit.currentHP);
 
             yield return new WaitForSeconds(2f);
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(PerformBurstRoutine());
             
 
         }
@@ -190,7 +190,7 @@ public class FinalBossBattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         state = BattleState2.ENEMYTURN;
-        StartCoroutine(EnemyTurn());
+        StartCoroutine(PerformBurstRoutine());
     }
 
 
@@ -252,26 +252,26 @@ public class FinalBossBattleSystem : MonoBehaviour
 
     public void TriggerRandomBurst()
     {
-        StartCoroutine(burstAttackController.PerformBurstRoutine());
-        bossUnit.GetComponent<BurstAttackController>().TriggerRandomBurst();
+        if(isEnemyTurn == true)
+        {
+            StartCoroutine(burstAttackController.PerformBurstRoutine());
+        }
     }
 
-    IEnumerator EnemyTurn()
+    IEnumerator PerformBurstRoutine()
     {
+       
         isShaking = true;
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
         
         yield return new WaitForSeconds(2f);
         TriggerFlash();
         bool isDead = playerUnit.TakeDamage(bossUnit.damage);
-    
+  
 
         playerHealth.SetHP(playerUnit.currentHP);
         TriggerFlash();
         dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + playerUnit.damage + " damage!";
-
-        // bossUnit.GetComponent<BurstAttackController>().TriggerRandomBurst();
-
 
         yield return new WaitForSeconds(2f);
 

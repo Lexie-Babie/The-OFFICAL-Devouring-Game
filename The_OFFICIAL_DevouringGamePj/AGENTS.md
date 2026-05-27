@@ -2,7 +2,7 @@
 - Project name: The_OFFICIAL_DevouringGamePj
 - Unity version: Unity 6000.3.9f1
 - Active game object:
-  - Name: spr_hud_blackscreen_0
+  - Name: CameraTrigger
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

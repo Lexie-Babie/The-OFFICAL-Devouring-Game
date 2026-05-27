@@ -78,13 +78,16 @@ public class BurstAttackController : MonoBehaviour
         {
             Debug.Log("Executing Attack A!");
             // Add your damage/animation/projectile logic here
-            int attacKA = 10;
+            int attackA = 10;
             hasAttacked = true;
+            Console.WriteLine(attackA);
+            StopAllCoroutines();
+
         }
         else
         {
             Debug.Log("Cannot execute Attack A, it's not the enemy's turn!");
-            int attackB = 10;
+            
             hasAttacked = false;
             return;
         } 
@@ -97,12 +100,15 @@ public class BurstAttackController : MonoBehaviour
             Debug.Log("Executing Attack B!");
             int attackB = 15;
             hasAttacked = true;
+            Console.WriteLine(attackB);
+            StopAllCoroutines();
+
         }
 
         else
         {
             Debug.Log("Cannot execute Attack B, it's not the enemy's turn!");
-            int attackB = 15;
+           
             hasAttacked = false;
             return;
         }
@@ -115,12 +121,15 @@ public class BurstAttackController : MonoBehaviour
             Debug.Log("Executing Attack C!");
             int attackC = 20;
             hasAttacked = true;
+            Console.WriteLine(attackC);
+            StopAllCoroutines();
+
         }
 
         else
         {
             Debug.Log("Cannot execute Attack C, it's not the enemy's turn!");
-            int attackC = 20;
+          
             hasAttacked = false;
             return;
         }
@@ -133,12 +142,15 @@ public class BurstAttackController : MonoBehaviour
             Debug.Log("Executing Attack D!");
             int attackC = 0;
             hasAttacked = true;
+            Console.WriteLine(attackC);
+            StopAllCoroutines();
+
         }
 
         else
         {
             Debug.Log("Cannot execute Attack D, it's not the enemy's turn!");
-            int attackC = 0;
+  
             hasAttacked = false;
             return;
         }  
