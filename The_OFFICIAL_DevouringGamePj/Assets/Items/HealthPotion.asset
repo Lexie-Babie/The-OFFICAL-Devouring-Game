@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: -1841651731519298542, guid: cac58500fc121774d9d3dd9cc692b08f, type: 3}
   description: 'you feel a renewed energy '
   itemType: 1
-  value: 5
+  value: 100

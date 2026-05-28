@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 112122384272805971, guid: cac58500fc121774d9d3dd9cc692b08f, type: 3}
   description: 'you feel as if you''re being watched '
   itemType: 0
-  value: 5
+  value: 100
