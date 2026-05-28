@@ -1798,7 +1798,7 @@ MonoBehaviour:
   nodeType: 3
   popupText: 
   itemToGive: {fileID: 0}
-  sceneToLoad: FalseCombatScene
+  sceneToLoad: KeyBossCombatScene
   connectedNodes:
   - {fileID: 559960499}
   - {fileID: 907919268}
@@ -4514,7 +4514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1027619277
 MonoBehaviour:
   m_ObjectHideFlags: 0
