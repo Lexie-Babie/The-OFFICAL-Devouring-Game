@@ -125,30 +125,31 @@ public class FinalBossBattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerCook()
+    IEnumerator PlayerCook(ItemData item)
     {
         isEnemyTurn = true;
         isPlayerTurn = false;
 
         StartCoroutine(ButtonCooldownRoutine());
 
-        bool isDead = bossUnit.CookDamage(playerUnit.cook);
-        Debug.Log("CookDamage");
+        // Use the item's value as damage instead of playerUnit.cook
+        int damage = item.value;
+        bool isDead = bossUnit.CookDamage(damage);
 
+        // Remove the item from the inventory after use
+        InventoryManager.Instance.RemoveItem(item);
 
         bossHealth.SetHP(bossUnit.currentHP);
-        dialogueManager.dialogueText.text = "The attack is successful! " + bossUnit.unitName + " takes " + playerUnit.cook + " damage!";
+        dialogueManager.dialogueText.text = playerUnit.unitName + " used " + item.itemName + "! " + bossUnit.unitName + " takes " + damage + " damage!";
 
         yield return new WaitForSeconds(2f);
 
         if (isDead)
         {
             state = BattleState2.WON;
-
             bossHealth.SetHP(bossUnit.currentHP = 0);
             bossUnit.GetComponent<SpriteRenderer>().enabled = false;
             yield return new WaitForSeconds(3.0f);
-
             SceneManager.LoadScene("WinScreen");
             EndBattle();
         }
@@ -156,13 +157,11 @@ public class FinalBossBattleSystem : MonoBehaviour
         {
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
-
             yield return new WaitForSeconds(2f);
             StartCoroutine(EnemyTurn());
-            
-
         }
     }
+
 
     public void StartButtonCooldown()
     {
@@ -196,18 +195,22 @@ public class FinalBossBattleSystem : MonoBehaviour
         }
     }
 
-
-    IEnumerator PlayerHeal()
+IEnumerator PlayerHeal(ItemData item)
     {
         isEnemyTurn = true;
         isPlayerTurn = false;
 
         StartCoroutine(ButtonCooldownRoutine());
 
-        playerUnit.Heal(5);
+        // Use the item's value as the heal amount
+        int healAmount = item.value;
+        playerUnit.Heal(healAmount);
+
+        // Remove the item from the inventory after use
+        InventoryManager.Instance.RemoveItem(item);
 
         playerHealth.SetHP(playerUnit.currentHP);
-        dialogueManager.dialogueText.text = "+ 5 = You feel renewed strength";
+        dialogueManager.dialogueText.text = playerUnit.unitName + " used " + item.itemName + "! +" + healAmount + " HP restored!";
 
         yield return new WaitForSeconds(2f);
 
@@ -215,32 +218,11 @@ public class FinalBossBattleSystem : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
-    public IEnumerator RandomBurstAttack(Transform playerUnit)
-    {
-        // 1. Determine a random number of hits for this "burst"
-        int hitCount = Random.Range(2, 5); // 2 to 4 hits
-
-        for (int i = 0; i < hitCount; i++)
-        {
-            // 2. Perform the individual hit logic
-            Debug.Log($"Hit {i + 1} of {hitCount}!");
-
-            // Apply damage or trigger an animation here
-            playerUnit.GetComponent<Unit>().TakeDamage(5);
-
-            // 3. Wait for a short duration between hits
-            yield return new WaitForSeconds(0.2f);
-
-        } 
-    }
 
     IEnumerator EnemyTurn()
     {
         isShaking = true;
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
-        
-        yield return StartCoroutine(RandomBurstAttack(playerUnit.transform));
-
 
         yield return new WaitForSeconds(2f);
 
@@ -340,19 +322,46 @@ public class FinalBossBattleSystem : MonoBehaviour
 
     public void OnHealButton()
     {
-        if (state != BattleState2.PLAYERTURN)
-            return;
-        StartCoroutine(PlayerHeal());
+        if (state != BattleState2.PLAYERTURN) return;
 
+        // Check if heal inventory is empty
+        if (InventoryManager.Instance.healInventory.Count == 0)
+        {
+            dialogueManager.dialogueText.text = "No healing items left!";
+            return;
+        }
+
+        // Open item selection panel with heal items
+        CombatInventoryUI.Instance.ShowHealItems(OnHealItemSelected);
     }
+
+    void OnHealItemSelected(ItemData item)
+    {
+        StartCoroutine(PlayerHeal(item));
+    }
+
+
 
     public void OnCookButton()
     {
-        if (state != BattleState2.PLAYERTURN)
-            return;
-        StartCoroutine(PlayerCook());
+        if (state != BattleState2.PLAYERTURN) return;
 
+        // Check if damage inventory is empty
+        if (InventoryManager.Instance.damageInventory.Count == 0)
+        {
+            dialogueManager.dialogueText.text = "No ingredients to cook with!";
+            return;
+        }
+
+        // Open item selection panel with damage items
+        CombatInventoryUI.Instance.ShowDamageItems(OnDamageItemSelected);
     }
+
+    void OnDamageItemSelected(ItemData item)
+    {
+        StartCoroutine(PlayerCook(item));
+    }
+
 }
 
- 
+
