@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 
 public enum BattleState2 { START, PLAYERTURN, ENEMYTURN, WON, LOST } //defining the different states that the game can be inusing UnityEngine;
@@ -70,6 +72,11 @@ public class FinalBossBattleSystem : MonoBehaviour
     public float flashDuration = 0.2f;
     public Color flashColor = new Color(1, 0, 0, 0.5f); // Red with 50% transparency
 
+    public Image flashImage2;
+    public float flashDuration2 = 0.2f;
+    public Color flashColor2 = new Color(1, 0, 0, 0.5f); // Purple with 50% transparency
+
+
     public BattleState2 state;
 
     //Start is called before the first frame update
@@ -132,7 +139,7 @@ public class FinalBossBattleSystem : MonoBehaviour
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
             yield return new WaitForSeconds(2f);
-            StartCoroutine(PerformBurstRoutine());
+            StartCoroutine(EnemyTurn());
         }
     }
 
@@ -169,7 +176,7 @@ public class FinalBossBattleSystem : MonoBehaviour
             bossHealth.SetHP(bossUnit.currentHP);
 
             yield return new WaitForSeconds(2f);
-            StartCoroutine(PerformBurstRoutine());
+            StartCoroutine(EnemyTurn());
             
 
         }
@@ -190,7 +197,7 @@ public class FinalBossBattleSystem : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         state = BattleState2.ENEMYTURN;
-        StartCoroutine(PerformBurstRoutine());
+        StartCoroutine(EnemyTurn());
     }
 
 
@@ -258,9 +265,16 @@ public class FinalBossBattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator PerformBurstRoutine()
+    IEnumerator EnemyTurn()
     {
-       
+        int critChance = 20; // 20% chance
+        int roll = Random.Range(1, 101); // Roll 1 to 100
+
+        if (roll <= critChance)
+        {
+            playerUnit.TakeDamage ( 2); // Double damage for critical hits
+            Console.WriteLine("CRITICAL HIT!");
+        }
         isShaking = true;
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
         

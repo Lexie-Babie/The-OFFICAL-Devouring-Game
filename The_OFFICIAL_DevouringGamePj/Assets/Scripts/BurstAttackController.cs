@@ -72,11 +72,11 @@ public class BurstAttackController : MonoBehaviour
     }
 
     // --- Specific Attack Methods ---
-    public void AttackA()
+    IEnumerator EnemyTurn()
     {
         if (state == BattleState2.ENEMYTURN)
         {
-            Debug.Log("Executing Attack A!");
+            Debug.Log("Executing Enemy Turn!");
             // Add your damage/animation/projectile logic here
             int attackA = 10;
             hasAttacked = true;
@@ -84,76 +84,52 @@ public class BurstAttackController : MonoBehaviour
             StopAllCoroutines();
 
         }
-        else
-        {
-            Debug.Log("Cannot execute Attack A, it's not the enemy's turn!");
-            
-            hasAttacked = false;
-            return;
-        } 
-    }
-
-    public void AttackB()
-    {
-        if(state == BattleState2.ENEMYTURN) 
+        else if (state != BattleState2.ENEMYTURN)
         {
             Debug.Log("Executing Attack B!");
             int attackB = 15;
             hasAttacked = true;
             Console.WriteLine(attackB);
             StopAllCoroutines();
-
-        }
-
-        else
-        {
-            Debug.Log("Cannot execute Attack B, it's not the enemy's turn!");
-           
-            hasAttacked = false;
-            return;
-        }
-    }
-
-    public void AttackC()
-    {
-        if (state == BattleState2.ENEMYTURN)
+        } 
+        else if (state != BattleState2.ENEMYTURN)
         {
             Debug.Log("Executing Attack C!");
             int attackC = 20;
             hasAttacked = true;
             Console.WriteLine(attackC);
             StopAllCoroutines();
-
         }
-
-        else
+        else if (state != BattleState2.ENEMYTURN)
         {
-            Debug.Log("Cannot execute Attack C, it's not the enemy's turn!");
-          
-            hasAttacked = false;
-            return;
+            Debug.Log("Executing Attack D!");
+            int attackD = 0;
+            hasAttacked = true;
+            Console.WriteLine(attackD);
+            StopAllCoroutines();
         }
+        yield return null;
+    }
+
+
+    public void AttackA()
+    {
+
+    }
+
+    public void AttackB()
+    {
+
+    }
+
+    public void AttackC()
+    {
+        
     }
 
     public void AttackD()
     {
-        if (state == BattleState2.ENEMYTURN)
-        {
-            Debug.Log("Executing Attack D!");
-            int attackC = 0;
-            hasAttacked = true;
-            Console.WriteLine(attackC);
-            StopAllCoroutines();
-
-        }
-
-        else
-        {
-            Debug.Log("Cannot execute Attack D, it's not the enemy's turn!");
-  
-            hasAttacked = false;
-            return;
-        }  
+        
     }
 }
 

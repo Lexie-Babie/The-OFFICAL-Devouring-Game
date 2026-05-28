@@ -382,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 70, y: 330}
+  m_AnchoredPosition: {x: -70, y: 274}
   m_SizeDelta: {x: 534.05, y: 265.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96413655
@@ -612,7 +612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -197, y: 65}
+  m_AnchoredPosition: {x: -252.53, y: 45}
   m_SizeDelta: {x: 168.99, y: 64.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280776081
@@ -1041,7 +1041,7 @@ Transform:
   m_GameObject: {fileID: 421716765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 745, y: 363, z: -9720}
+  m_LocalPosition: {x: 666, y: 354, z: -9720}
   m_LocalScale: {x: 32.1516, y: 26.8164, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1087,7 +1087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.197}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -127, y: -63}
+  m_AnchoredPosition: {x: -152, y: -57.455}
   m_SizeDelta: {x: 154.07, y: 114.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445968094
@@ -1134,9 +1134,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1780448880}
         m_TargetAssemblyTypeName: TutBattleSystem, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnCookButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2992,7 +2992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.25, y: -225}
+  m_AnchoredPosition: {x: -79, y: -194}
   m_SizeDelta: {x: 143.49, y: 102.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198988556
