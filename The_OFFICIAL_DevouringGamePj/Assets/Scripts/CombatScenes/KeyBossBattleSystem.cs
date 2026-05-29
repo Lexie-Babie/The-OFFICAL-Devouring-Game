@@ -340,8 +340,6 @@ IEnumerator PlayerHeal(ItemData item)
         StartCoroutine(PlayerHeal(item));
     }
 
-
-
     public void OnCookButton()
     {
         if (state != BattleState2.PLAYERTURN) return;
