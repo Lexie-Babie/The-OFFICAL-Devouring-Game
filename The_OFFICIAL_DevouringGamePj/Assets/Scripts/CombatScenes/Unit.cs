@@ -13,6 +13,10 @@ public class Unit : MonoBehaviour
     public int heal;
     public int cook;
 
+    [Header("Damage Range")]
+    public int minDamage;
+    public int maxDamage;
+
     public int maxHP;
     public int currentHP;
 
