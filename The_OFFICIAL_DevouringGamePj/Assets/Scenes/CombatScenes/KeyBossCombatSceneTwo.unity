@@ -4764,6 +4764,9 @@ MonoBehaviour:
   randomHeal: 10
   randomHealChance: 0.2
   randomBurstAttack: 1
+  normalDamage: 10
+  burstDamage: 20
+  actionDelay: 1
   state: 0
 --- !u!1001 &2543050087470768040
 PrefabInstance:

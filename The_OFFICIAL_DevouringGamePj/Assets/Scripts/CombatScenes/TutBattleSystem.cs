@@ -127,7 +127,7 @@ public class TutBattleSystem : MonoBehaviour
             goblinHealth.SetHP(goblinUnit.currentHP);
 
             yield return new WaitForSeconds(1.5f);
-            StartCoroutine(EnemyTurn2());
+            StartCoroutine(EnemyTurn());
         }
        
     }
