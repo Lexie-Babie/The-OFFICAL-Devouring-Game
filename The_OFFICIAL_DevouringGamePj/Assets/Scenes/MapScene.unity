@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
-  itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
+  popupText: you found a misplaced organ along the way (added to your inventory)
+  itemToGive: {fileID: 11400000, guid: dfeb6f52af4ef1f4c8079012f8837f1f, type: 2}
   sceneToLoad: 
   connectedNodes:
   - {fileID: 1448702066}
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: You found a health potion along the way, (added to your inventory)
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -784,7 +784,7 @@ MonoBehaviour:
   nodeType: 3
   popupText: 
   itemToGive: {fileID: 0}
-  sceneToLoad: FalseCombatScene
+  sceneToLoad: KeyBossCombatSceneTwo
   connectedNodes:
   - {fileID: 492086459}
   isVisited: 0
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
+  popupText: You Found an Eyeball Pasta along the way (added to your inventory)
   itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -1226,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -133.99994, y: 12.01001}
-  m_SizeDelta: {x: -1212.17, y: -120.09}
+  m_AnchoredPosition: {x: -133.99994, y: -19.76001}
+  m_SizeDelta: {x: -1212.17, y: 197.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259749253
 MonoBehaviour:
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
+  popupText: You Found an Eyeball Pasta along the way (added to your inventory)
   itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -1862,8 +1862,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
-  itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
+  popupText: you found a misplaced organ along the way (added to your inventory)
+  itemToGive: {fileID: 11400000, guid: dfeb6f52af4ef1f4c8079012f8837f1f, type: 2}
   sceneToLoad: 
   connectedNodes:
   - {fileID: 778062091}
@@ -2186,7 +2186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
+  popupText: You Found an Eyeball Pasta along the way (added to your inventory)
   itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: 'You found a health potion along the way (added to your inventory) '
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 662288346}
   - component: {fileID: 662288345}
   m_Layer: 0
-  m_Name: Connection_NodeB1
+  m_Name: Ingredient_NodeIDK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2673,9 +2673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64639f210571f954f9ad146e79c7b7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
-  nodeType: 0
-  popupText: 
-  itemToGive: {fileID: 0}
+  nodeType: 1
+  popupText: you found a misplaced organ along the way (added to your inventory)
+  itemToGive: {fileID: 11400000, guid: dfeb6f52af4ef1f4c8079012f8837f1f, type: 2}
   sceneToLoad: 
   connectedNodes:
   - {fileID: 1251889538}
@@ -2732,7 +2732,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7568085972911053767, guid: 014da53d0b55bf847ad68e0128e71c7b, type: 3}
+  m_Sprite: {fileID: 7093379998343121403, guid: 014da53d0b55bf847ad68e0128e71c7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3400,7 +3400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: 'You found a health potion along the way, (added to your inventory)  '
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -4383,7 +4383,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 202.4653, y: -97.57416, z: 146.36096, w: -120.09099}
+  m_margin: {x: 155.96622, y: -388.19116, z: 146.36096, w: -379.709}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4509,7 +4509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
+  popupText: You Found an Eyeball Pasta along the way (added to your inventory)
   itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -5163,7 +5163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1027619277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6083,7 +6083,7 @@ MonoBehaviour:
   nodeType: 3
   popupText: 
   itemToGive: {fileID: 0}
-  sceneToLoad: FalseCombatScene
+  sceneToLoad: FinalBossCombatScene
   connectedNodes: []
   isVisited: 0
   isReachable: 0
@@ -6554,7 +6554,7 @@ MonoBehaviour:
   nodeType: 3
   popupText: 
   itemToGive: {fileID: 0}
-  sceneToLoad: FalseCombatScene
+  sceneToLoad: KeyBossCombatScene
   connectedNodes:
   - {fileID: 162806567}
   isVisited: 0
@@ -7896,7 +7896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: You found a health potion along the way, (added to your inventory)
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -8057,7 +8057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 1
-  popupText: Ur MOm!
+  popupText: You Found an Eyeball Pasta along the way (added to your inventory)
   itemToGive: {fileID: 11400000, guid: a9645f73eb8180b47b4000dd845c0681, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -8975,7 +8975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: 'You found a health potion along the way, (added to your inventory)  '
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -9406,7 +9406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: 'You found a health potion along the way, (added to your inventory)  '
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -9787,7 +9787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapNode
   nodeType: 2
-  popupText: hah, gottem
+  popupText: 'You found a health potion along the way, (added to your inventory)  '
   itemToGive: {fileID: 11400000, guid: 3fe04c8c0f5e0294a916f6f8e05a116f, type: 2}
   sceneToLoad: 
   connectedNodes:
@@ -10097,6 +10097,135 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2088144479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088144480}
+  - component: {fileID: 2088144481}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088144480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088144479}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55262, y: -1.03957, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2088144481
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088144479}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8504724deff6e724bb69782d165c1888, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2100837832
 GameObject:
   m_ObjectHideFlags: 0
@@ -10204,3 +10333,4 @@ SceneRoots:
   - {fileID: 1760717110}
   - {fileID: 1801879131}
   - {fileID: 762003412}
+  - {fileID: 2088144480}

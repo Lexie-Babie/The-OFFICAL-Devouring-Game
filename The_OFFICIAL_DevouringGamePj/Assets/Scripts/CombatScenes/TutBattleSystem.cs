@@ -388,7 +388,7 @@ public class TutBattleSystem : MonoBehaviour
         }
     }
 
-    /*void Update()
+    void Update()
     {
         if (state == BattleState.WON)
         {
@@ -398,7 +398,7 @@ public class TutBattleSystem : MonoBehaviour
         {
             SceneManager.LoadScene("LoseScreen");
         }
-    }*/
+    }
 
     void PlayerTurn()
     {

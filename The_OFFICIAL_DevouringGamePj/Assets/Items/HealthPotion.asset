@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HealthPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   itemName: Health Potion
-  icon: {fileID: -1841651731519298542, guid: cac58500fc121774d9d3dd9cc692b08f, type: 3}
-  description: 'you feel a renewed energy '
+  icon: {fileID: 1213942348918825044, guid: cac58500fc121774d9d3dd9cc692b08f, type: 3}
+  description: 'A mysterious green liquid. sweet to taste and potent. you can feel
+    it''s revitalizing energy '
   itemType: 1
-  value: 100
+  value: 15

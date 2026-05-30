@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77882f1d7b6ac4d44bca823129d3bf38, type: 3}
+  m_Name: Heart
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  itemName: Discarded Heart
+  icon: {fileID: 1174124046142137798, guid: cac58500fc121774d9d3dd9cc692b08f, type: 3}
+  description: 'deeply rich and concentrated flavour. still beats faintly in your
+    satchle '
+  itemType: 0
+  value: 30
