@@ -59,6 +59,16 @@ public class FinalBossBattleSystem : MonoBehaviour
 
     public bool randomBurstAttack = true;
 
+    [Header("Stats")]
+    public int normalDamage = 10;
+    public int burstDamage = 30;
+    public float actionDelay = 1f;
+    private int turnCounter = 0;
+
+    public Image flashImage;
+    public float flashDuration = 0.2f;
+    public Color flashColor = new Color(1, 0, 0, 0.5f); // Red with 50% transparency
+
     public BattleState2 state;
 
     //Start is called before the first frame update
@@ -158,7 +168,7 @@ public class FinalBossBattleSystem : MonoBehaviour
             state = BattleState2.ENEMYTURN;
             bossHealth.SetHP(bossUnit.currentHP);
             yield return new WaitForSeconds(2f);
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(EnemyTurn2());
         }
     }
 
@@ -195,7 +205,31 @@ public class FinalBossBattleSystem : MonoBehaviour
         }
     }
 
-IEnumerator PlayerHeal(ItemData item)
+    public void TriggerFlash()
+    {
+        StartCoroutine(FlashCoroutine());
+    }
+
+    private IEnumerator FlashCoroutine()
+    {
+        // Set to flash color
+        flashImage.color = flashColor;
+
+        // Fade out
+        float elapsed = 0f;
+        while (elapsed < flashDuration)
+        {
+            elapsed += Time.deltaTime;
+            float lerpAlpha = Mathf.Lerp(flashColor.a, 0, elapsed / flashDuration);
+            flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, lerpAlpha);
+            yield return null;
+        }
+
+        // Ensure it's fully transparent at the end
+        flashImage.color = new Color(flashColor.r, flashColor.g, flashColor.b, 0);
+    }
+
+    IEnumerator PlayerHeal(ItemData item)
     {
         isEnemyTurn = true;
         isPlayerTurn = false;
@@ -218,6 +252,77 @@ IEnumerator PlayerHeal(ItemData item)
         StartCoroutine(EnemyTurn());
     }
 
+    public void StartEnemyTurn()
+    {
+        turnCounter++;
+        StartCoroutine(EnemyTurn2());
+    }
+    private IEnumerator EnemyTurn2()
+    {
+        state = BattleState2.ENEMYTURN;
+        // Pause briefly before the AI decides/acts
+        yield return new WaitForSeconds(actionDelay);
+
+        // Check if the current turn is a multiple of 3
+        if (turnCounter % 3 == 0)
+        {
+            yield return StartCoroutine(BurstAttack());
+            dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + bossUnit.maxDamage + " damage!";
+        }
+        else
+        {
+            yield return StartCoroutine(NormalAttack());
+            dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + bossUnit.minDamage + " damage!";
+        }
+        TriggerFlash();
+
+        bool isDead = playerUnit.TakeDamage(bossUnit.maxDamage);
+        bool isDeadNormal = playerUnit.TakeDamage(bossUnit.minDamage);
+        playerHealth.SetHP(playerUnit.currentHP);
+
+
+        yield return new WaitForSeconds(1.5f);
+
+        if (isDead)
+        {
+            state = BattleState2.LOST;
+            playerUnit.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1.5f);
+
+            EndBattle();
+        }
+        else if (isDeadNormal)
+        {
+            state = BattleState2.LOST;
+            playerUnit.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1.5f);
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState2.PLAYERTURN;
+
+            PlayerTurn();
+        }
+    }
+
+    private IEnumerator NormalAttack()
+    {
+        dialogueManager.dialogueText.text = bossUnit.unitName + " attacks with a NORMAL ATTACK!";
+        int minDamage = bossUnit.minDamage;
+        Debug.Log("Enemy uses a Normal Attack!");
+        // Add your attack animation and damage application logic here
+        yield return new WaitForSeconds(1.5f); // Wait for animation
+    }
+
+    private IEnumerator BurstAttack()
+    {
+        dialogueManager.dialogueText.text = bossUnit.unitName + " is preparing a BURST ATTACK!";
+        int maxDamage = bossUnit.maxDamage;
+        Debug.Log("Enemy triggers a BURST ATTACK!");
+        // Add your heavy attack animation and damage application logic here
+        yield return new WaitForSeconds(1.5f); // Wait for burst animation
+    }
 
     IEnumerator EnemyTurn()
     {
@@ -225,6 +330,8 @@ IEnumerator PlayerHeal(ItemData item)
         dialogueManager.dialogueText.text = bossUnit.unitName + " attacks!";
 
         yield return new WaitForSeconds(2f);
+
+        TriggerFlash();
 
         bool isDead = playerUnit.TakeDamage(bossUnit.damage);
         playerHealth.SetHP(playerUnit.currentHP);
