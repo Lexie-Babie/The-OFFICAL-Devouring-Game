@@ -63,6 +63,12 @@ public class KeyBossBattleSystemTwo : MonoBehaviour
 
     public bool randomBurstAttack = true;
 
+    [Header("Stats")]
+    public int normalDamage = 10;
+    public int burstDamage = 30;
+    public float actionDelay = 1f;
+    private int turnCounter = 0;
+
     public BattleState4 state;
 
     //Start is called before the first frame update
@@ -162,7 +168,7 @@ public class KeyBossBattleSystemTwo : MonoBehaviour
             state = BattleState4.ENEMYTURN;
             enemyHealth.SetHP(enemyUnit.currentHP);
             yield return new WaitForSeconds(2f);
-            StartCoroutine(EnemyTurn());
+            StartCoroutine(EnemyTurn2());
         }
     }
 
@@ -246,6 +252,77 @@ public class KeyBossBattleSystemTwo : MonoBehaviour
         StartCoroutine(EnemyTurn());
     }
 
+    public void StartEnemyTurn()
+    {
+        turnCounter++;
+        StartCoroutine(EnemyTurn2());
+    }
+    private IEnumerator EnemyTurn2()
+    {
+        state = BattleState4.ENEMYTURN;
+        // Pause briefly before the AI decides/acts
+        yield return new WaitForSeconds(actionDelay);
+
+        // Check if the current turn is a multiple of 3
+        if (turnCounter % 3 == 0)
+        {
+            yield return StartCoroutine(BurstAttack());
+            dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + enemyUnit.maxDamage + " damage!";
+        }
+        else
+        {
+            yield return StartCoroutine(NormalAttack());
+            dialogueManager.dialogueText.text = playerUnit.unitName + " takes " + enemyUnit.minDamage + " damage!";
+        }
+        TriggerFlash();
+
+        bool isDead = playerUnit.TakeDamage(enemyUnit.maxDamage);
+        bool isDeadNormal = playerUnit.TakeDamage(enemyUnit.minDamage);
+        playerHealth.SetHP(playerUnit.currentHP);
+
+
+        yield return new WaitForSeconds(1.5f);
+
+        if (isDead)
+        {
+            state = BattleState4.LOST;
+            playerUnit.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1.5f);
+
+            EndBattle();
+        }
+        else if (isDeadNormal)
+        {
+            state = BattleState4.LOST;
+            playerUnit.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1.5f);
+            EndBattle();
+        }
+        else
+        {
+            state = BattleState4.PLAYERTURN;
+
+            PlayerTurn();
+        }
+    }
+
+    private IEnumerator NormalAttack()
+    {
+        dialogueManager.dialogueText.text = enemyUnit.unitName + " attacks with a NORMAL ATTACK!";
+        int minDamage = enemyUnit.minDamage;
+        Debug.Log("Enemy uses a Normal Attack!");
+        // Add your attack animation and damage application logic here
+        yield return new WaitForSeconds(1.5f); // Wait for animation
+    }
+
+    private IEnumerator BurstAttack()
+    {
+        dialogueManager.dialogueText.text = enemyUnit.unitName + " is preparing a BURST ATTACK!";
+        int maxDamage = enemyUnit.maxDamage;
+        Debug.Log("Enemy triggers a BURST ATTACK!");
+        // Add your heavy attack animation and damage application logic here
+        yield return new WaitForSeconds(1.5f); // Wait for burst animation
+    }
 
     IEnumerator EnemyTurn()
     {

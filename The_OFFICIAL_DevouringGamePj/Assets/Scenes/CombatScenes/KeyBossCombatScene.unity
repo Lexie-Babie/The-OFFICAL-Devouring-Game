@@ -4789,6 +4789,14 @@ PrefabInstance:
       propertyPath: currentHP
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 864889162667304665, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
+      propertyPath: maxDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 864889162667304665, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
+      propertyPath: minDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1681869286091660008, guid: 25b7ba9be710c8044880197e5d5ea7a5, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.23016939

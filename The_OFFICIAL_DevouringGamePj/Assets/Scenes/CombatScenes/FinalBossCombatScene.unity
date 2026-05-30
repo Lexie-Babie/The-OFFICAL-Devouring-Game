@@ -3739,6 +3739,8 @@ MonoBehaviour:
   damage: 20
   heal: 0
   cook: 0
+  minDamage: 10
+  maxDamage: 20
   maxHP: 200
   currentHP: 200
 --- !u!1 &1791035700
