@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/CutSceneTest.unity
+    path: Assets/Scenes/CutScenes/CutSceneTest.unity
     guid: c5a2cd0a38af332419ea7a8a2dad3283
   - enabled: 0
-    path: Assets/Scenes/FalseCombatScene.unity
+    path: Assets/Scenes/CombatScenes/FalseCombatScene.unity
     guid: db370735e8244f446b90b33c7572264a
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 84991891aec033e479b73279aa0ef11e
   - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: f3a4ba87177f884478da75cb561c99c5
@@ -21,14 +24,29 @@ EditorBuildSettings:
     path: Assets/Scenes/FauxCombatScene.unity
     guid: bd7d0291a6ec261499ee63adca278472
   - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
+    path: Assets/Scenes/CutScenes/TutorialScene.unity
     guid: 8aafba8f8fb117b4cb2162f8b6dcd931
   - enabled: 1
-    path: Assets/Scenes/TutCombatScene.unity
+    path: Assets/Scenes/CombatScenes/TutCombatScene.unity
     guid: 74a0f426cfe4e4844b7294ca2b64ae60
   - enabled: 1
-    path: Assets/Scenes/KeyBossCombatScene.unity
+    path: Assets/Scenes/CombatScenes/WinScreen.unity
+    guid: fb90e93e6c11c5649aaae2fdd552304e
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/KeyBossCombatScene.unity
     guid: b5a9349701014154995734735f3818df
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/FinalBossCombatScene.unity
+    guid: 1a15bfb2d095f11489400f794b3561e8
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/LoseScreen.unity
+    guid: 95bf9c151350bab4f87578a002a723f0
+  - enabled: 1
+    path: Assets/Scenes/CombatScenes/WellDoneWinScreen.unity
+    guid: 3f51b78d4969b0044869506aa336af6a
+  - enabled: 1
+    path: Assets/Scenes/ThanksForPlaying.unity
+    guid: 8eafb1c70abbf884bbb62d4c196d139a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
